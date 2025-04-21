@@ -50,6 +50,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'products.middleware.loggerMiddleware.LoggerMiddleware',
 ]
 
 ROOT_URLCONF = 'ecommerceMar25.urls'
@@ -78,8 +79,12 @@ WSGI_APPLICATION = 'ecommerceMar25.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'product',
+        'USER': 'admin',
+        'PASSWORD': 'Admin1234',
+        'HOST': 'database-1.cpgcqo6uw4tv.ap-south-1.rds.amazonaws.com',
+        'PORT': '3306',
     }
 }
 
